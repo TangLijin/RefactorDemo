@@ -38,4 +38,28 @@ public class GildedRoseTest {
         assertEquals(0, item.quality);
     }
 
+
+    @Test
+    public void should_return_31_when_call_updateQuality_given_Aged_BrieSe_sellIn_10_quality_30() {
+        Item item = new Item("Aged Brie", 10, 30);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(31, item.quality);
+    }
+
+    @Test
+    public void should_return_50_when_call_updateQuality_given_normal_item_sellIn_10_quality_50() {
+        Item item = new Item("Aged Brie", 10, 50);
+            GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+            gildedRose.updateQuality();
+
+            assertEquals(50, item.quality);
+
+
+    }
+
+
 }
