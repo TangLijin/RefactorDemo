@@ -52,14 +52,23 @@ public class GildedRoseTest {
     @Test
     public void should_return_50_when_call_updateQuality_given_normal_item_sellIn_10_quality_50() {
         Item item = new Item("Aged Brie", 10, 50);
-            GildedRose gildedRose = new GildedRose(new Item[]{item});
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
 
-            gildedRose.updateQuality();
+        gildedRose.updateQuality();
 
-            assertEquals(50, item.quality);
-
-
+        assertEquals(50, item.quality);
     }
 
 
+
+    @Test
+    public void should_return_same_when_call_updateQuality_given_normal_item_sellIn_10_quality_20() {
+        Item item = new Item("Sulfuras, Hand of Ragnaros", 10, 20);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(10, item.sellIn);
+        assertEquals(20, item.quality);
+    }
 }
