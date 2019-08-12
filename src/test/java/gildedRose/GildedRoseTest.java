@@ -112,4 +112,23 @@ public class GildedRoseTest {
         assertEquals(0, item.quality);
     }
 
+    @Test
+    public void should_return_80_when_call_updateQuality_given_Sulfuras_sellIn_20_quality_80() {
+        Item item = new Item("Sulfuras, Hand of Ragnaros", 20, 80);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(80, item.quality);
+    }
+    @Test
+    public void should_return_80_when_call_updateQuality_given_Sulfuras_sellIn_0_quality_80() {
+        Item item = new Item("Sulfuras, Hand of Ragnaros", 0, 80);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+
+        gildedRose.updateQuality();
+
+        assertEquals(80, item.quality);
+    }
+
 }
