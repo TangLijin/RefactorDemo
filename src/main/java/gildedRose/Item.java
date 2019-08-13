@@ -2,6 +2,7 @@ package gildedRose;
 
 public class Item {
 
+    public static final int MAX_QUALITY = 50;
     private String name;
 
     private int sellIn;

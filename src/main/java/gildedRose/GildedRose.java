@@ -5,31 +5,28 @@ public class GildedRose {
     public GildedRose(Item[] items) {
         this.items = items;
     }
-    
+
+    public void increaseQualityWhenLessThanMax(Item item){
+        if (item.getQuality() < Item.MAX_QUALITY) {
+            item.addQualityBy1();
+        }
+    }
     
 
     public void updateQuality() {
         for(Item item : items){
             switch (item.getName()){
                 case "Aged Brie":
-                    if (item.getQuality() < 50) {
-                        item.addQualityBy1();
-                    }
+                    increaseQualityWhenLessThanMax(item);
                     item.decreaseSellInBy1();
                     break;
                 case "Backstage passes to a TAFKAL80ETC concert":
-                    if (item.getQuality() < 50) {
-                        item.addQualityBy1();
-                    }
+                    increaseQualityWhenLessThanMax(item);
                     if (item.getSellIn() < 11) {
-                        if (item.getQuality() < 50) {
-                            item.addQualityBy1();
-                        }
+                        increaseQualityWhenLessThanMax(item);
                     }
                     if (item.getSellIn() < 6) {
-                        if (item.getQuality() < 50) {
-                            item.addQualityBy1();
-                        }
+                        increaseQualityWhenLessThanMax(item);
                     }
                     item.decreaseSellInBy1();
                     if (item.getSellIn() < 0) {
