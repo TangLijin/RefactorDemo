@@ -45,20 +45,7 @@ public class Item {
 
 
     public void createItemStrategy(String strategyName) {
-        switch (strategyName) {
-            case "Aged Brie":
-                itemStrategy =  new AgedBrie();
-                break;
-            case "Backstage passes to a TAFKAL80ETC concert":
-                itemStrategy = new BackstagePasses();
-                break;
-            case "Sulfuras, Hand of Ragnaros":
-                itemStrategy = new Sulfuras();
-                break;
-            default:
-                itemStrategy = new NormalItem();
-                break;
-        }
+        itemStrategy = ItemStrategyFactory.createItemStrategy(strategyName);
     }
 
     @Override
